@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Drawing Analyzer | IgniteGeek</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+    <h1>📐 Upload Engineering Drawing</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="drawing" accept="image/*" required />
+        <button type="submit">Analyze Drawing</button>
+    </form>
+    <p class="status">Mode: <strong>{{ 'Paid Mode' if is_paid else 'Free Mode' }}</strong></p>
+    <a class="toggle-link" href="/admin/toggle">Toggle Mode</a>
+</body>
+</html>
